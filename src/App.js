@@ -19,7 +19,7 @@ class App extends Component {
       .then((res) => res.json())
       // .then((res) => console.log(res));
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         this.setState({
           tasks: data,
         });
@@ -41,14 +41,13 @@ class App extends Component {
         el.id === key ? { ...el, category: "complete" } : el
       ),
     }));
-    // console.log("handleComplete");
   };
 
-  handleChange = (task) => {
-    this.setState({
-      tasks: [...this.state.tasks, { ...task }],
-    });
-  };
+  // handleChange = (task) => {
+  //   this.setState({
+  //     tasks: [...this.state.tasks, { ...task }],
+  //   });
+  // };
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -80,6 +79,25 @@ class App extends Component {
       });
   };
 
+  handleDelete = (info) => {
+    let tasksarray = [...this.state.tasks];
+    let index = tasksarray.indexOf(info);
+    tasksarray.splice(index, 1);
+
+    // fetch(TASKBASEURL, {
+    //   method: "DELETE",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     task: info,
+    //   }),
+    // });
+    this.setState({
+      tasks: tasksarray,
+    });
+  };
   render() {
     return (
       <Router>
@@ -94,6 +112,7 @@ class App extends Component {
                 user={this.state.user}
                 onComplete={this.handleComplete}
                 onSubmit={this.handleSubmit}
+                onDelete={this.handleDelete}
               />
             )}
           />

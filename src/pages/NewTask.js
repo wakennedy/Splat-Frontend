@@ -18,7 +18,7 @@ export default class NewTask extends Component {
             <input
               type="submit"
               name="submit"
-              value="Create New Task"
+              value="Create"
               className="submit"
             />
           </form>

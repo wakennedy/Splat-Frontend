@@ -8,7 +8,12 @@ export default class Home extends Component {
     const { tasks } = this.props;
     // debugger;
     return tasks.map((task) => (
-      <TaskCard key={task.id} info={task} onComplete={this.props.onComplete} />
+      <TaskCard
+        key={task.id}
+        info={task}
+        onComplete={this.props.onComplete}
+        onDelete={this.props.onDelete}
+      />
     ));
   };
   render() {
