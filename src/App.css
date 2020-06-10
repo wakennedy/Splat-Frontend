@@ -36,10 +36,7 @@
     transform: rotate(360deg);
   }
 }
-.task-table {
-  margin: auto;
-  text-align: center;
-}
+
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -63,6 +60,46 @@
   color: black;
 }
 
+.task-table {
+  text-align: left;
+  margin: auto;
+  word-wrap: break-word;
+  overflow: visible;
+}
 .task-form {
-  float: right;
+  text-align: center;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+table {
+  margin: auto;
+  word-wrap: break-word;
+  /* border: 5px solid black; */
+}
+th {
+  border-bottom: 6px solid black;
+  text-align: center;
+  min-width: 150px;
+}
+td {
+  text-align: center;
+  overflow: visible;
+  max-width: 400px;
+  word-wrap: break-word;
+  padding: 5px 5px 5px;
+  border-bottom: 3px solid black;
+}
+
+.btn {
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  align-items: center;
 }

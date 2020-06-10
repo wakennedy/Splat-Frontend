@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import TaskCard from "../components/TaskCard.js";
 import "../App.css";
+import NewTask from "../pages/NewTask";
 
 export default class Home extends Component {
   renderIncompleteTasks = () => {
@@ -13,23 +14,27 @@ export default class Home extends Component {
   render() {
     return (
       <Fragment>
-        <div className="task-table">
-          <h1>Hello, {this.props.user.username}!</h1>
-          <h2>You have {this.props.tasks.length} tasks.</h2>
-          <table className="table-bordered">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>{this.renderIncompleteTasks()}</tbody>
-          </table>
+        <div className="wrapper">
+          <div className="task-table">
+            <h1>Hello, {this.props.user.username}!</h1>
+            <h2>You have {this.props.tasks.length} tasks.</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>{this.renderIncompleteTasks()}</tbody>
+            </table>
+          </div>
+          <br />
+          <br />
+          <NewTask onSubmit={this.props.onSubmit} user={this.props.user} />
         </div>
-        <br />
-        <div className="task-form">
+        {/* <div className="task-form">
           <h2>Create a New Task</h2>
           <form onSubmit={(e) => this.props.onSubmit(e)}>
             <p>Enter your Task Name:</p>
@@ -38,7 +43,6 @@ export default class Home extends Component {
             <input type="text" name="description" />
             <p>Enter your Task Category:</p>
             <input type="text" name="category" />
-            {/* CONTROLLED FORMS??? */}
             <br></br>
             <input
               type="submit"
@@ -47,7 +51,7 @@ export default class Home extends Component {
               className="submit"
             />
           </form>
-        </div>
+        </div> */}
       </Fragment>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../App.css";
 
 export default class TaskCard extends Component {
   handleOnComplete = () => {
@@ -13,11 +14,7 @@ export default class TaskCard extends Component {
         <td>{info.description}</td>
         <td>{info.category}</td>
         <td>
-          <button
-            type="button"
-            className="btn btn-default"
-            onClick={this.handleOnComplete}
-          >
+          <button type="button" className="btn" onClick={this.handleOnComplete}>
             Complete
           </button>
         </td>

@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar.js";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import User from "./pages/User";
-import NewTask from "./pages/NewTask";
 
 const TASKBASEURL = "http://localhost:3000/tasks";
 const USERBASEURL = "http://localhost:3000/users";
@@ -103,18 +102,6 @@ class App extends Component {
             path="/user"
             render={() => (
               <User user={this.state.user} tasks={this.state.tasks} />
-            )}
-          />
-          <Route
-            exact
-            path="/newtask"
-            render={() => (
-              <NewTask
-                user={this.state.user}
-                tasks={this.state.tasks}
-                count={this.state.tasks.length}
-                onSubmit={this.handleSubmit}
-              />
             )}
           />
         </div>

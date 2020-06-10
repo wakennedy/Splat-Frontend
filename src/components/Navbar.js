@@ -11,9 +11,6 @@ export default class NavBar extends Component {
         <NavLink to="/user" exact>
           {this.props.user.username}
         </NavLink>
-        <NavLink to="/newtask" exact>
-          New Task
-        </NavLink>
       </div>
     );
   }
