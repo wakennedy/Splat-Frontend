@@ -17,9 +17,7 @@ class App extends Component {
   componentDidMount() {
     fetch(TASKBASEURL)
       .then((res) => res.json())
-      // .then((res) => console.log(res));
       .then((data) => {
-        // console.log(data);
         this.setState({
           tasks: data,
         });
@@ -27,7 +25,6 @@ class App extends Component {
     fetch(USERBASEURL)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data[0]);
         this.setState({
           user: data[0],
         });
@@ -42,12 +39,6 @@ class App extends Component {
       ),
     }));
   };
-
-  // handleChange = (task) => {
-  //   this.setState({
-  //     tasks: [...this.state.tasks, { ...task }],
-  //   });
-  // };
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -56,11 +47,6 @@ class App extends Component {
     newTask.description = e.target.description.value;
     newTask.category = e.target.category.value;
 
-    // this.setState({
-    //   tasks: [...this.state.tasks, { ...newTask }],
-    // });
-
-    // build new task here. update state with instanceof then continue with fetch
     fetch(TASKBASEURL, {
       method: "POST",
       headers: {

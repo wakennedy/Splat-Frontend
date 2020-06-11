@@ -39,24 +39,6 @@ export default class Home extends Component {
           <br />
           <NewTask onSubmit={this.props.onSubmit} user={this.props.user} />
         </div>
-        {/* <div className="task-form">
-          <h2>Create a New Task</h2>
-          <form onSubmit={(e) => this.props.onSubmit(e)}>
-            <p>Enter your Task Name:</p>
-            <input type="text" name="name" />
-            <p>Enter your Task Description:</p>
-            <input type="text" name="description" />
-            <p>Enter your Task Category:</p>
-            <input type="text" name="category" />
-            <br></br>
-            <input
-              type="submit"
-              name="submit"
-              value="Create New Task"
-              className="submit"
-            />
-          </form>
-        </div> */}
       </Fragment>
     );
   }
