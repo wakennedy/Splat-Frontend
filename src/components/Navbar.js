@@ -11,6 +11,9 @@ export default class NavBar extends Component {
         <NavLink to="/user" exact>
           {this.props.user.username}
         </NavLink>
+        <NavLink to="/login" exact style={{ float: "right" }}>
+          Login
+        </NavLink>
       </div>
     );
   }
