@@ -47,44 +47,46 @@ export default class Signup extends Component {
   render() {
     const { username, color, password } = this.state.fields;
     return (
-      <div className="ui form">
-        {this.state.error ? <h1>That username is already taken</h1> : null}
-        <form onSubmit={this.handleSubmit}>
-          <div className="ui field">
-            <label>Username</label>
-            <br />
-            <input
-              name="username"
-              placeholder="Enter username"
-              value={username}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="ui field">
-            <label>Favorite Color</label>
-            <br />
-            <input
-              name="color"
-              placeholder="Enter favorite color"
-              value={color}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="ui field">
-            <label>Password</label>
-            <br />
-            <input
-              name="password"
-              type="password"
-              placeholder="Enter password"
-              value={password}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="form button">
-            <button type="submit">Login</button>
-          </div>
-        </form>
+      <div className="wrapper">
+        <div className="ui form">
+          {this.state.error ? <h1>That username is already taken</h1> : null}
+          <form onSubmit={this.handleSubmit}>
+            <div className="ui field">
+              <label>Username</label>
+              <br />
+              <input
+                name="username"
+                placeholder="Enter username"
+                value={username}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="ui field">
+              <label>Favorite Color</label>
+              <br />
+              <input
+                name="color"
+                placeholder="Enter favorite color"
+                value={color}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="ui field">
+              <label>Password</label>
+              <br />
+              <input
+                name="password"
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form button">
+              <button type="submit">Login</button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

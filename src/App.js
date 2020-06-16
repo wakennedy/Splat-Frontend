@@ -18,7 +18,6 @@ class App extends Component {
   };
   componentDidMount() {
     const userId = localStorage.user_id;
-    // console.log(localStorage);
 
     fetch(TASKBASEURL)
       .then((res) => res.json())
@@ -29,7 +28,6 @@ class App extends Component {
       });
     fetch(`${USERBASEURL}/${userId}`)
       .then((res) => res.json())
-      // .then((data) => console.log(data))
       .then((data) => {
         this.setState({
           user: data,
@@ -38,7 +36,6 @@ class App extends Component {
   }
 
   login = (loginuser) => {
-    // this.setState({ currentUser: user })
     localStorage.setItem("user_id", loginuser.id);
     this.setState({ user: loginuser });
   };
@@ -81,20 +78,14 @@ class App extends Component {
     let index = tasksarray.indexOf(info);
     tasksarray.splice(index, 1);
 
-    // fetch(TASKBASEURL, {
-    //   method: "DELETE",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     task: info,
-    //   }),
-    // });
+    fetch(`${TASKBASEURL}/${info.id}`, {
+      method: "DELETE",
+    }).then((res) => res.json());
     this.setState({
       tasks: tasksarray,
     });
   };
+
   render() {
     return (
       <Router>

@@ -108,3 +108,16 @@ td {
   flex-flow: column;
   align-items: center;
 }
+
+.ui form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-flow: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: lightgray;
+}

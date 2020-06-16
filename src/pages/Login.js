@@ -49,39 +49,41 @@ export default class Login extends Component {
   render() {
     const { username, password } = this.state.fields;
     return (
-      <div className="ui form">
-        {this.state.error ? (
-          <h1>Couldn't find that username. Please try again.</h1>
-        ) : null}
-        <form onSubmit={this.handleSubmit}>
-          <div className="ui field">
-            <label>Username</label>
-            <br />
-            <input
-              name="username"
-              placeholder="Enter username"
-              value={username}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="ui field">
-            <label>Password</label>
-            <br />
-            <input
-              name="password"
-              type="password"
-              placeholder="Enter password"
-              value={password}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="form button">
-            <button type="submit">Login</button>
-          </div>
-        </form>
-        <NavLink to="/signup" exact>
-          Sign Up
-        </NavLink>
+      <div className="login wrapper">
+        <div className="ui form">
+          {this.state.error ? (
+            <h1>Couldn't find that username. Please try again.</h1>
+          ) : null}
+          <form onSubmit={this.handleSubmit}>
+            <div className="ui field">
+              <label>Username</label>
+              <br />
+              <input
+                name="username"
+                placeholder="Enter username"
+                value={username}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="ui field">
+              <label>Password</label>
+              <br />
+              <input
+                name="password"
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form button">
+              <button type="submit">Login</button>
+            </div>
+          </form>
+          <NavLink to="/signup" exact>
+            Sign Up
+          </NavLink>
+        </div>
       </div>
     );
   }
