@@ -4,7 +4,10 @@ import { NavLink } from "react-router-dom";
 export default class NavBar extends Component {
   render() {
     return (
-      <div className="navbar">
+      <div
+        className="navbar"
+        style={{ backgroundColor: `${this.props.user.color}` }}
+      >
         <NavLink to="/" exact>
           Home
         </NavLink>
