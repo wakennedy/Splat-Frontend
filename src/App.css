@@ -122,3 +122,8 @@ td {
   border-radius: 10px;
   background-color: lightgray;
 }
+.log-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

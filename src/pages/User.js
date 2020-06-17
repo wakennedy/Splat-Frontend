@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import history from "../history";
 
 const URL = "http://localhost:3000/users";
 
@@ -39,8 +40,13 @@ export default class User extends Component {
       body: JSON.stringify(this.state.fields),
     })
       .then((resp) => resp.json())
-      .then(console.log)
+
+      // .then(this.props.history.push("/"))
+      //   this.props.history.push("/");
+
       .catch();
+    // this.props.renderHome();
+    // this.props.history.push("/");
   };
 
   render() {
@@ -48,7 +54,7 @@ export default class User extends Component {
     return (
       <div className="wrapper">
         <div className="ui form">
-          <h1>Your User Profile</h1>
+          <h1>{username}</h1>
           <form onSubmit={this.handleSubmit}>
             <div className="ui field">
               <label>Username</label>
@@ -81,6 +87,11 @@ export default class User extends Component {
               <button type="submit">Update Profile</button>
             </div>
           </form>
+        </div>
+        <div>
+          <button type="click" onClick={this.props.logout}>
+            Logout
+          </button>
         </div>
       </div>
     );

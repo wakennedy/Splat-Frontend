@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 
 const URL = "http://localhost:3000/auth";
 const EMPTYFIELDS = {
@@ -44,6 +43,7 @@ export default class Login extends Component {
         }
       });
     this.setState({ fields: EMPTYFIELDS });
+    this.props.renderHome();
   };
 
   render() {
@@ -80,9 +80,6 @@ export default class Login extends Component {
               <button type="submit">Login</button>
             </div>
           </form>
-          <NavLink to="/signup" exact>
-            Sign Up
-          </NavLink>
         </div>
       </div>
     );
