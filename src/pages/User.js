@@ -65,12 +65,7 @@ export default class User extends Component {
               <label>Favorite Color</label>
               <br />
               <div>
-                <select
-                  className="custom-select"
-                  name="color"
-                  value={color}
-                  onChange={this.handleChange}
-                >
+                <select name="color" value={color} onChange={this.handleChange}>
                   <option value="#8A1604">Red</option>
                   <option value="#BD7D08">Orange</option>
                   <option value="#0C8A17">Green</option>

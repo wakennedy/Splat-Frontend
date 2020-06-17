@@ -3,7 +3,7 @@ import React, { Component } from "react";
 const URL = "http://localhost:3000/users";
 const EMPTYFIELDS = {
   username: "",
-  color: "",
+  color: "#333",
   password: "",
 };
 
@@ -22,6 +22,7 @@ export default class Signup extends Component {
   };
 
   handleSubmit = (event) => {
+    // debugger;
     event.preventDefault();
     fetch(URL, {
       method: "POST",
@@ -61,16 +62,7 @@ export default class Signup extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div className="ui field">
-              <label>Favorite Color</label>
-              <br />
-              <input
-                name="color"
-                placeholder="Enter favorite color"
-                value={color}
-                onChange={this.handleChange}
-              />
-            </div>
+
             <div className="ui field">
               <label>Password</label>
               <br />
@@ -81,6 +73,21 @@ export default class Signup extends Component {
                 value={password}
                 onChange={this.handleChange}
               />
+            </div>
+            <div className="ui field">
+              <label>Favorite Color</label>
+              <br />
+              <div>
+                <select name="color" value={color} onChange={this.handleChange}>
+                  <option value="#8A1604">Red</option>
+                  <option value="#BD7D08">Orange</option>
+                  <option value="#0C8A17">Green</option>
+                  <option value="#04BD92">Teal</option>
+                  <option value="#0E8DBD">Blue</option>
+                  <option value="#9F52C8">Purple</option>
+                  <option value="#333">Gray</option>
+                </select>
+              </div>
             </div>
             <div className="form button">
               <button type="submit">Login</button>
