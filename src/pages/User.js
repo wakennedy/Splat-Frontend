@@ -45,6 +45,8 @@ class User extends Component {
       .catch();
     // debugger;
     // this.props.onColorChange()
+    // let newstate = { ...this.state };
+    // this.setState(newstate);
     this.props.history.push("/");
   };
   render() {
