@@ -7,9 +7,7 @@ import Home from "./pages/Home";
 import User from "./pages/User";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
-// import { createBrowserHistory } from "./history";
 
-// const history = createBrowserHistory();
 const TASKBASEURL = "http://localhost:3000/tasks";
 const USERBASEURL = "http://localhost:3000/users";
 
@@ -51,6 +49,7 @@ class App extends Component {
   };
   renderHome = () => {
     let logged = localStorage.getItem("logged_in");
+    // eslint-disable-next-line
     if (logged == "true") {
       return this.ifLoggedIn();
     } else {
@@ -166,6 +165,7 @@ class App extends Component {
 
   render() {
     return (
+      // eslint-disable-next-line
       <div>{this.state.user == {} ? null : this.renderHome()}</div>
       // <div>{this.renderHome()}</div>
       // <Router>

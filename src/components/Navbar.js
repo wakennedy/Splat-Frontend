@@ -5,7 +5,7 @@ export default class NavBar extends Component {
   renderLogs = () => {
     const { user } = this.props;
     let logged = localStorage.getItem("logged_in");
-
+    // eslint-disable-next-line
     if (logged == "true") {
       return (
         <div

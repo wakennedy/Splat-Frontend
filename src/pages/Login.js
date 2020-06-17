@@ -37,7 +37,7 @@ export default class Login extends Component {
       .then((user) => {
         if (!user.error) {
           this.props.onLogin(user);
-          this.props.history.push("/");
+          //   this.props.history.push("/");
         } else {
           this.setState({ error: true });
         }

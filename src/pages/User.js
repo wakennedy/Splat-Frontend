@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+// import { useHistory } from "react-router";
 // import history from "../history";
+import { withRouter } from "react-router-dom";
 
 const URL = "http://localhost:3000/users";
-
-export default class User extends Component {
+class User extends Component {
   state = {
     fields: {
       username: "",
@@ -30,6 +31,7 @@ export default class User extends Component {
   };
 
   handleSubmit = (event) => {
+    // debugger;
     event.preventDefault();
     fetch(`${URL}/${this.state.fields.id}`, {
       method: "PATCH",
@@ -40,15 +42,11 @@ export default class User extends Component {
       body: JSON.stringify(this.state.fields),
     })
       .then((resp) => resp.json())
-
-      // .then(this.props.history.push("/"))
-      //   this.props.history.push("/");
-
       .catch();
-    // this.props.renderHome();
-    // this.props.history.push("/");
+    // debugger;
+    // this.props.onColorChange()
+    this.props.history.push("/");
   };
-
   render() {
     const { username, color } = this.state.fields;
     return (
@@ -97,3 +95,4 @@ export default class User extends Component {
     );
   }
 }
+export default withRouter(User);
