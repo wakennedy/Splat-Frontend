@@ -59,7 +59,7 @@ class App extends Component {
   ifLoggedIn = () => {
     return (
       <BrowserRouter>
-        <Navbar user={this.state.user} log={this.state.log} />
+        <Navbar user={this.state.user} />
         <div className="Main">
           <Route
             exact
@@ -109,10 +109,14 @@ class App extends Component {
   ifNotLoggedIn = () => {
     return (
       <BrowserRouter>
-        <Navbar user={this.state.user} log={this.state.log} />
-        <div className="log-wrapper">
-          <Login onLogin={this.login} renderHome={this.renderHome} />
-          <SignUp onLogin={this.login} renderHome={this.renderHome} />
+        <Navbar user={this.state.user} />
+        <div className="large-wrapper">
+          <div className="log-wrapper">
+            <Login onLogin={this.login} renderHome={this.renderHome} />
+            <SignUp onLogin={this.login} renderHome={this.renderHome} />
+          </div>
+          <img id="big-logo" src="https://i.imgur.com/pK3GhXG.png" alt="Home" />
+          <p style={{ fontSize: 140 }}>Splat</p>
         </div>
       </BrowserRouter>
     );
@@ -121,7 +125,7 @@ class App extends Component {
     let key = info.id;
     this.setState((prevState) => ({
       tasks: prevState.tasks.map((el) =>
-        el.id === key ? { ...el, category: "complete" } : el
+        el.id === key ? { ...el, category: "Complete" } : el
       ),
     }));
   };

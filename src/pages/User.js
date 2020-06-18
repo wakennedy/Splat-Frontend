@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { useHistory } from "react-router";
 // import history from "../history";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 
 const URL = "http://localhost:3000/users";
 class User extends Component {
@@ -42,12 +42,23 @@ class User extends Component {
       body: JSON.stringify(this.state.fields),
     })
       .then((resp) => resp.json())
+      .then((data) => {
+        // console.log("yo");
+        // return <Redirect to="/" />;
+
+        this.props.history.push("/");
+        // this.forceUpdate();
+        // this.props.history.replace({
+        //   pathname: "/",
+        //   state: { user: data },
+        // });
+      })
       .catch();
     // debugger;
     // this.props.onColorChange()
     // let newstate = { ...this.state };
     // this.setState(newstate);
-    this.props.history.push("/");
+    // this.props.history.push("/");
   };
   render() {
     const { username, color } = this.state.fields;

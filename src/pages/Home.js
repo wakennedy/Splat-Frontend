@@ -7,6 +7,7 @@ export default class Home extends Component {
   renderIncompleteTasks = () => {
     const { tasks } = this.props;
     // debugger;
+    // console.log(this.props);
     return tasks.map((task) => (
       <TaskCard
         key={task.id}
@@ -17,6 +18,7 @@ export default class Home extends Component {
     ));
   };
   render() {
+    // this.forceUpdate();
     return (
       <Fragment>
         <div className="wrapper">

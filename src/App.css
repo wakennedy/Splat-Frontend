@@ -49,16 +49,11 @@
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 8px 8px;
   width: 15%; /*to spread out evenly*/
   text-decoration: none;
   font-size: 17px;
   text-transform: capitalize;
-}
-
-.navbar a:hover {
-  background: #ddd;
-  color: black;
 }
 
 .task-table {
@@ -126,4 +121,17 @@ td {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.large-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#logo,
+#user {
+  width: 40px;
+}
+#big-logo {
+  width: 400px;
 }
