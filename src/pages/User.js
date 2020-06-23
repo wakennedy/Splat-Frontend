@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { useHistory } from "react-router";
 // import history from "../history";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const URL = "http://localhost:3000/users";
 class User extends Component {
